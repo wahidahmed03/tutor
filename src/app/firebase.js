@@ -1,22 +1,26 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Load environment variables from .env file
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDy73LMwckgPfHhFs2dqkTI5v-df_exd9U",
-  authDomain: "varatiya-9713e.firebaseapp.com",
-  databaseURL: "https://varatiya-9713e-default-rtdb.firebaseio.com",
-  projectId: "varatiya-9713e",
-  storageBucket: "varatiya-9713e.appspot.com",
-  messagingSenderId: "403946382761",
-  appId: "1:403946382761:web:dffd381c772bd7519e10b8",
-  measurementId: "G-FBZ5PQ5GLJ"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+const analytics = getAnalytics(app);
+
+
+
